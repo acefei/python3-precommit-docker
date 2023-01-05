@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  pre-commit:
+    build: .
+    image: pre-commit
+    working_dir: /app

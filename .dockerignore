@@ -1,0 +1,7 @@
+# Ignore everything
+*
+
+# Allow files
+!.pre-commit-config.yaml
+!pyproject.toml*
+!entrypoint.sh

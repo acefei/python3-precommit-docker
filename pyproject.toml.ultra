@@ -1,0 +1,64 @@
+[tool.coverage.report]
+omit = [ "tests/**" ]
+
+[tool.vulture]
+sort_by_size = true
+paths = ['.']
+min_confidence = 80
+ignore_names = ["cls"]
+
+[tool.ruff]
+# Same as Black.
+line-length = 88
+indent-width = 4
+
+target-version = "py310"
+
+fix = true
+unsafe-fixes = true
+show-fixes = true
+show-source = true
+
+[tool.ruff.lint]
+# Please refer https://docs.astral.sh/ruff/rules/ for the short name.
+select = ["ALL"]
+
+ignore-init-module-imports = true
+
+ignore = [
+    "D",
+    "COM",
+    "ANN",
+    "E501",
+    "B904",
+    "T201",
+    "E722",
+    "BLE001",
+    "UP032", # f-string
+    "TRY002",
+    "ERA001",
+    "PLR2004",
+    "E741",
+    "SLF001",
+    "PTH123",
+]
+
+[tool.ruff.lint.pylint]
+max-args = 10
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+order-by-type = false
+
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"

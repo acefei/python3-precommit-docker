@@ -1,0 +1,66 @@
+[tool.coverage.report]
+omit = [ "tests/**" ]
+
+[tool.vulture]
+sort_by_size = true
+paths = ['.']
+min_confidence = 80
+ignore_names = ["cls"]
+
+[tool.ruff]
+# Same as Black.
+line-length = 88
+indent-width = 4
+
+target-version = "py37"
+
+fix = true
+show-fixes = true
+show-source = true
+
+[tool.ruff.lint]
+# Please refer https://docs.astral.sh/ruff/rules/ for the short name.
+select = [
+# Pyflakes
+    "F",
+
+# Isort
+    "I",
+
+# Comprehensions
+    "C4",
+
+# Pycodestyle
+    "E",
+    "W",
+
+# Flake8-simplify
+    "SIM",
+]
+
+ignore-init-module-imports = true
+
+ignore = [
+    "E501",
+    "E722",
+]
+
+# Avoid trying to fix violations.
+unfixable = []
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+order-by-type = false
+
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"

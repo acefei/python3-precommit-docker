@@ -11,6 +11,7 @@ COPY . /config
 WORKDIR /app
 COPY .pre-commit-config.yaml .
 SHELL ["/bin/bash", "-c"]
+ENV PYRIGHT_PYTHON_FORCE_VERSION=latest
 RUN git init . && \
     pre-commit install-hooks && \
     eval "\$(find ~/.cache/pre-commit | grep 'bin/pyright\$') --help"

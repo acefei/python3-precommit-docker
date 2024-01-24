@@ -1,0 +1,40 @@
+name: Auto Pre-commit Upgrade and Push
+
+on:
+  push:
+    branches:
+    - main
+    schedule:
+    - cron: 6 6 * * 6
+
+jobs:
+  pre-commit-upgrade-and-push:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+
+    - name: Install pre-commit
+      run: pip install pre-commit
+
+    - name: Run pre-commit upgrade
+      run: pre-commit autoupdate
+
+    - name: Check for changes
+      id: check_changes
+      run: |
+        git diff --exit-code || echo "::set-output name=changed::true"
+
+    - name: Commit and push changes
+      if: steps.check_changes.outputs.changed == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git commit -m "Auto commit after pre-commit upgrade"
+        git push

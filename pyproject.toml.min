@@ -46,6 +46,7 @@ ignore-init-module-imports = true
 ignore = [
     "E501",
     "E722",
+    "E741",
 ]
 
 # Avoid trying to fix violations.

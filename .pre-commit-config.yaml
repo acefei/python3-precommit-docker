@@ -14,7 +14,7 @@ repos:
 
 # Source code spell checker
 - repo: https://github.com/crate-ci/typos
-  rev: v1.17.1
+  rev: v1.17.2
   hooks:
   - id: typos
 
@@ -27,7 +27,7 @@ repos:
 
 # Static type checker
 - repo: https://github.com/RobertCraigie/pyright-python
-  rev: v1.1.347
+  rev: v1.1.348
   hooks:
   - id: pyright
 
@@ -39,7 +39,7 @@ repos:
 
 # An extremely fast Python linter
 - repo: https://github.com/charliermarsh/ruff-pre-commit
-  rev: v0.1.13
+  rev: v0.1.14
   hooks:
   # Run the linter.
   - id: ruff

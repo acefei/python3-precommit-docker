@@ -21,3 +21,6 @@ docker run -v $PWD:/app -e CONF_TARGET=ultra pre-commit
 # or run with latest pre-commit hooks
 docker run -v $PWD:/app -e UPDATE=true pre-commit
 ```
+
+## Notes
+- Please make sure that the files have executable permissions if you encounter '(no files to check)Skipped'

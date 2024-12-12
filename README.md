@@ -4,9 +4,7 @@ A Docker Image of pre-commit for Python Project
 
 ## Usage
 ```
-cd <python project>
 docker run --pull always -v $PWD:/app ghcr.io/acefei/python3-precommit-docker:main [*.py]
-# find more usage as follows
 ```
 
 You can also build the docker image by manual with this repo.

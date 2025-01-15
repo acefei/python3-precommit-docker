@@ -47,6 +47,7 @@ ignore = [
     "E501",
     "E722",
     "E741",
+    "F405",
 ]
 
 # Avoid trying to fix violations.

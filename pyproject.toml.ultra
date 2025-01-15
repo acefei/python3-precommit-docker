@@ -41,6 +41,7 @@ ignore = [
     "E741",
     "SLF001",
     "PTH123",
+    "F405",
 ]
 
 [tool.ruff.lint.pylint]
